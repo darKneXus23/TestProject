@@ -5,7 +5,7 @@ require_once 'components/wordlist.php';
 
 //-----------------------------------------------------------------------------------------------------------
 
-$body = 'please enter any combination of characters (no space, under 7)';
+$body = 'please enter any combination of characters (under 8 characters)';
 $letterArray = array();
 $permuteArray = array();
 $resultArray = array();
@@ -14,11 +14,11 @@ $input = "";
 // ----------------------------------------------------------------------------------------------------------
 
 if (isset($_POST['permute'])) {
-    $letterArray = str_split(strtolower($_POST['permute']));
+    $letterArray = str_split(strtolower(str_replace(' ', '', $_POST['permute'])));
     $permuteArray = Cleaner(AllPermutations($letterArray));
     $resultArray = CompareWords($wordlist, $permuteArray, count($letterArray));
     $body = "";
-    $input = $_POST['permute'];
+    $input = str_replace(' ', '', $_POST['permute']);
     foreach ($resultArray as $value) {
         if (strrev($value) == $value) {
             $body .= "<div class='col m-2 d-flex flex-column align-items-center border'><a href='https://www.dictionary.com/browse/{$value}'>{$value}</a> (palindrome)</div>";
