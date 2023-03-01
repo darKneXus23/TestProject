@@ -2088,7 +2088,6 @@ allrounder
 alltime
 allvictorious
 allweather
-alla
 allabsorbing
 allah
 allamanda
@@ -64296,7 +64295,6 @@ ulex
 ulfilas
 uliginous
 ulitis
-ull
 ullage
 ullalulla
 ulmaceae

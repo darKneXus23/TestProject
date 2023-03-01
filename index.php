@@ -21,9 +21,9 @@ if (isset($_POST['permute'])) {
     $input = $_POST['permute'];
     foreach ($resultArray as $value) {
         if (strrev($value) == $value) {
-            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'>{$value} (palindrome)</div>";
+            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'><a href='https://www.dictionary.com/browse/{$value}'>{$value} (palindrome)</a></div>";
         } else {
-            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'>{$value}</div>";
+            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'><a href='https://www.dictionary.com/browse/{$value}'>{$value}</a></div>";
         }
     }
 }
@@ -113,7 +113,7 @@ function AllPermutations($inArray, $inProcessedArray = array())
                     <div class="row row-cols-1 row-cols-md-5">
                         <h5>Input: <?= $input ?></h5>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-5">
+                    <div class="row d-flex justify-content-between flex-wrap">
                         <?= $body ?>
                     </div>
                 </div>
