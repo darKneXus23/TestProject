@@ -5,7 +5,7 @@ require_once 'components/wordlist.php';
 
 //-----------------------------------------------------------------------------------------------------------
 
-$body = 'please enter any combination of letters (no space)';
+$body = 'please enter any combination of characters (no space, under 7)';
 $letterArray = array();
 $permuteArray = array();
 $resultArray = array();
