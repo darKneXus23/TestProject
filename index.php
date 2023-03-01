@@ -99,7 +99,8 @@ function AllPermutations($inArray, $inProcessedArray = array())
 <body>
     <?= $navbar ?>
     <div class="d-flex flex-column align-items-center">
-        <h3 class="my-3">Wordfinder:</h1>
+        <h3 class="my-1">Wordfinder:</h1>
+        <div class="my-3">(wordlist is not complete, could find non-words, ~70k list)</div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class='col d-flex flex-column align-items-center'>
