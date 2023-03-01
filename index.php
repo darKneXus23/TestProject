@@ -21,7 +21,7 @@ if (isset($_POST['permute'])) {
     $input = $_POST['permute'];
     foreach ($resultArray as $value) {
         if (strrev($value) == $value) {
-            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'><a href='https://www.dictionary.com/browse/{$value}'>{$value} (palindrome)</a></div>";
+            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'><a href='https://www.dictionary.com/browse/{$value}'>{$value}</a> (palindrome)</div>";
         } else {
             $body .= "<div class='col m-2 d-flex flex-column align-items-center border'><a href='https://www.dictionary.com/browse/{$value}'>{$value}</a></div>";
         }
