@@ -9,6 +9,7 @@ $body = 'please enter any combination of characters (no space, under 7)';
 $letterArray = array();
 $permuteArray = array();
 $resultArray = array();
+$input = "";
 
 // ----------------------------------------------------------------------------------------------------------
 
@@ -17,8 +18,13 @@ if (isset($_POST['permute'])) {
     $permuteArray = Cleaner(AllPermutations($letterArray));
     $resultArray = CompareWords($wordlist, $permuteArray, count($letterArray));
     $body = "";
+    $input = $_POST['permute'];
     foreach ($resultArray as $value) {
-        $body .= "<div class='col m-2 d-flex flex-column align-items-center'>{$value}</div>";
+        if (strrev($value) == $value) {
+            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'>{$value} (palindrome)</div>";
+        } else {
+            $body .= "<div class='col m-2 d-flex flex-column align-items-center border'>{$value}</div>";
+        }
     }
 }
 
@@ -103,8 +109,13 @@ function AllPermutations($inArray, $inProcessedArray = array())
                         <input class="btn btn-sm btn-success mt-3 mx-5" type="submit" name="submit" value="GO">
                     </form>
                 </div>
-                <div class="row row-cols-1 row-cols-md-5">
-                    <?= $body ?>
+                <div class='col d-flex flex-column align-items-center'>
+                    <div class="row row-cols-1 row-cols-md-5">
+                        <h5>Input: <?= $input ?></h5>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-5">
+                        <?= $body ?>
+                    </div>
                 </div>
             </div>
         </div>
