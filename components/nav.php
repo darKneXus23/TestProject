@@ -6,7 +6,8 @@ $navbar = " <nav class='navbar navbar-expand-lg bg-light sticky-top'>
                     </button>
                     <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
                         <div class='navbar-nav'>
-                            <a class='nav-link' href='index.php'>Home</a>
+                            <a class='nav-link' href='index.php'>Wordfinder</a>
+                            <a class='nav-link' href='jsTestGame/index.htm'>jsTestGame</a>
                         </div>
                     </div>
                 </div>
